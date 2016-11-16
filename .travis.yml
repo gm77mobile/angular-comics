@@ -1,0 +1,24 @@
+language: node_js
+node_js: "4.2"
+
+install:
+  - npm install -g bower grunt-cli jshint karma
+  - npm install
+  - bower install
+
+cache:
+  directories:
+    - node_modules
+    - bower_components
+
+script: grunt karma distribution
+
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: $GITHUB_API_TOKEN
+  file: angular-comics-distribution.zip
+  on:
+    branch: ci
+
