@@ -22,5 +22,5 @@ deploy:
     secure: $GITHUB_API_TOKEN
   file: angular-comics-distribution.zip
   on:
-    branch: ci
+    branch: cli
 
